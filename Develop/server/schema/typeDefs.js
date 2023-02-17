@@ -1,6 +1,6 @@
 const { gql } = require('apollo-server-express');
 
-gql` 
+const typeDefs =gql` 
     type User {
         _id: ID
         username: String
@@ -21,6 +21,10 @@ gql`
 
     type Query {
         getSingleUser(id: ID, username: String): User
+    }
+
+    type Mutation {
+        
     }
     
 `

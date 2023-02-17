@@ -10,7 +10,20 @@ const resolvers = {
             });
             return foundUser;
         },
-    }
+        book: async () => {
+            return Book.find({});
+        },
+        
+        async createUser({ body }, res) {
+            const user = await User.create(body);
+            if (!user) {
+                return res.status(400).json({ message: 'Incorrect path'})
+            }
+        }
+    },
+    Mutation: {
+        
+    },
 };
 
 
